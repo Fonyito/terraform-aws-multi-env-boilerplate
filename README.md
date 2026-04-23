@@ -26,7 +26,7 @@ Este boilerplate proporciona una base sólida y profesional para proyectos de in
 
 ## 🏗️ Arquitectura
 
-![Diagrama de arquitectura](docs/architecture.png)
+![Diagrama de arquitectura](docs/architecture.md)
 
 El proyecto utiliza **Terraform Workspaces** para separar entornos, **S3 + DynamoDB** para gestión de estado remoto con bloqueo, y **GitHub Actions** para automatización de despliegues.
 
