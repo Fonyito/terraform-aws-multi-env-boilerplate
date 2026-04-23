@@ -1,0 +1,25 @@
+# ==============================================================================
+# WordPress HA - Example Variables File
+# ==============================================================================
+# Copia este archivo a terraform.tfvars y personaliza los valores
+# IMPORTANTE: Nunca commitees terraform.tfvars con credenciales reales
+# ==============================================================================
+
+# Credenciales de Base de Datos (REQUERIDO)
+# IMPORTANTE: Usa una contraseña segura y única
+db_password = "CAMBIAR-POR-PASSWORD-SEGURO"
+
+# Configuración de WordPress
+wordpress_email = "tu-email@ejemplo.com"
+wordpress_admin = "admin"
+wordpress_title = "Mi Sitio WordPress"
+
+# Región de AWS (opcional, por defecto us-east-1)
+# aws_region = "us-east-1"
+
+# Tags adicionales (opcional)
+# tags = {
+#   Owner      = "Tu Nombre"
+#   CostCenter = "Marketing"
+#   Department = "IT"
+# }

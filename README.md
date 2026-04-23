@@ -487,7 +487,20 @@ terraform-aws-multi-env-boilerplate/
 │   ├── dev.tfvars                 # Variables de desarrollo
 │   ├── staging.tfvars             # Variables de staging
 │   └── prod.tfvars                # Variables de producción
+├── examples/
+│   └── wordpress-ha/              # Ejemplo de WordPress HA
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── outputs.tf
+│       ├── environments/
+│       └── docs/
 ├── modules/
+│   ├── vpc/                       # Módulo de VPC
+│   ├── security-groups/           # Módulo de Security Groups
+│   ├── alb/                       # Módulo de Application Load Balancer
+│   ├── rds/                       # Módulo de RDS MySQL
+│   ├── efs/                       # Módulo de EFS
+│   ├── asg/                       # Módulo de Auto Scaling Group
 │   └── README.md                  # Guía de módulos
 ├── backend.tf                     # Configuración de estado remoto
 ├── main.tf                        # Recursos principales
@@ -497,6 +510,57 @@ terraform-aws-multi-env-boilerplate/
 ├── terraform.tfvars.example       # Ejemplo de variables
 └── README.md                      # Este archivo
 ```
+
+---
+
+## 💡 Ejemplos de Implementación
+
+Este proyecto incluye ejemplos completos de arquitecturas reales que puedes usar como referencia o punto de partida para tus propios proyectos.
+
+### WordPress High Availability
+
+**Ubicación**: `examples/wordpress-ha/`
+
+Implementación completa de WordPress con alta disponibilidad en AWS, incluyendo:
+
+- ✅ **VPC Multi-AZ** con subnets públicas y privadas
+- ✅ **Application Load Balancer** para distribución de tráfico
+- ✅ **Auto Scaling Group** con escalado automático basado en CPU
+- ✅ **RDS MySQL Multi-AZ** para base de datos con alta disponibilidad
+- ✅ **EFS** para almacenamiento compartido de archivos de WordPress
+- ✅ **Security Groups** con principio de mínimo privilegio
+- ✅ **Configuraciones por entorno** (dev, staging, prod)
+
+**Características destacadas**:
+- Arquitectura escalable y resiliente
+- Documentación completa con diagramas
+- Estimación de costes por entorno
+- Guía de despliegue paso a paso
+- Scripts de instalación automatizada
+
+**Documentación**:
+- [README del ejemplo](examples/wordpress-ha/README.md)
+- [Estimación de costes](examples/wordpress-ha/docs/cost-estimation.md)
+- [Diagrama de arquitectura](examples/wordpress-ha/README.md#-arquitectura)
+
+**Inicio rápido**:
+```bash
+cd examples/wordpress-ha
+terraform init
+terraform workspace new dev
+terraform apply -var-file=environments/dev.tfvars
+```
+
+**Coste estimado**:
+- Desarrollo: ~$50-70/mes
+- Staging: ~$120-150/mes
+- Producción: ~$250-350/mes
+
+Este ejemplo es ideal para:
+- 🎯 Sitios WordPress de producción con alta disponibilidad
+- 🎯 Aprender arquitecturas escalables en AWS
+- 🎯 Portfolio de proyectos para freelancers y consultores
+- 🎯 Base para proyectos de clientes reales
 
 ---
 
