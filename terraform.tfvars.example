@@ -1,0 +1,70 @@
+# Terraform Variables Example File
+# 
+# This file demonstrates how to set variable values for your Terraform configuration.
+# Copy this file to terraform.tfvars and update with your actual values.
+#
+# Usage:
+#   cp terraform.tfvars.example terraform.tfvars
+#   # Edit terraform.tfvars with your values
+#   terraform plan
+#
+# Note: terraform.tfvars is gitignored to prevent committing sensitive values
+
+# AWS Region
+# The AWS region where resources will be created
+# Common values: us-east-1, us-west-2, eu-west-1, ap-southeast-1
+# See: https://docs.aws.amazon.com/general/latest/gr/rande.html
+aws_region = "us-east-1"
+
+# Environment
+# The environment name for this deployment
+# Valid values: dev, staging, prod
+# This value should match the Terraform workspace name
+environment = "dev"
+
+# Project Name
+# A unique identifier for your project
+# Used for resource naming and tagging
+# Should be lowercase with hyphens (e.g., my-project, web-app, api-service)
+# This will be used as a prefix for resource names
+project_name = "my-project"
+
+# Additional Tags
+# Custom tags to apply to all resources
+# Tags help with cost tracking, organization, and resource management
+# Common tags include: Owner, CostCenter, Department, Application
+tags = {
+  Owner      = "DevOps Team"
+  CostCenter = "Engineering"
+  Department = "Technology"
+  Application = "Infrastructure"
+}
+
+# Example for different environments:
+#
+# Development (dev):
+#   environment  = "dev"
+#   project_name = "my-project"
+#   aws_region   = "us-east-1"
+#   tags = {
+#     Owner      = "DevOps Team"
+#     CostCenter = "Development"
+#   }
+#
+# Staging (staging):
+#   environment  = "staging"
+#   project_name = "my-project"
+#   aws_region   = "us-east-1"
+#   tags = {
+#     Owner      = "DevOps Team"
+#     CostCenter = "Staging"
+#   }
+#
+# Production (prod):
+#   environment  = "prod"
+#   project_name = "my-project"
+#   aws_region   = "us-east-1"
+#   tags = {
+#     Owner      = "DevOps Team"
+#     CostCenter = "Production"
+#   }
